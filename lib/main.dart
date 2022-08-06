@@ -29,40 +29,79 @@ class MyApp extends StatelessWidget {
           leading: Container(),
           title: Text('Tarefas'),
         ),
-        body: caixas(),
+        body: ListView(
+
+          children: [
+            caixas(),
+            caixas(),
+            caixas(),
+            caixas(),
+            caixas(),
+            caixas(),
+            caixas(),
+            caixas(),
+            caixas(),
+            caixas(),
+
+
+          ],
+
+        ),
         floatingActionButton: FloatingActionButton(onPressed: () {}),
+
+
       ),
+
     );
   }
 }
-class caixas extends StatelessWidget {
 
+class caixas extends StatelessWidget {
   const caixas({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Column(
+      child: Stack(
         children: [
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(4),
+            ),
+            child: Row(
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      border: Border.all(color: Colors.black, width: 2),
+                      color: Colors.pink),
+                  width: 100,
+                  height: 150,
+                ),
+                Container(
+                  child: Icon(Icons.account_circle_outlined),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      border: Border.all(color: Colors.black, width: 2),
+                      color: Colors.redAccent),
+                  width: 100,
+                  height: 150,
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      border: Border.all(color: Colors.black, width: 2),
+                      color: Colors.yellowAccent),
+                  width: 100,
+                  height: 150,
+                ),
 
-          Row(
-            children: [
-              Container(color:Colors.red,width: 100, height: 100,),
-              Container(color:Colors.blue,width: 100, height: 100,),
-              Container(color:Colors.purpleAccent,width: 100, height: 100,),
-            ],
+              ],
+            ),
           ),
-
-
-
-
-
-
         ],
       ),
     );
   }
 }
-
-
