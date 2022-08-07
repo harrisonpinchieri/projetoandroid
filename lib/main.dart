@@ -19,18 +19,41 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Color.fromARGB(250, 26, 35, 126),
+          titleTextStyle: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ), //TextStyle
+        ), //AppBarThem
         primarySwatch: Colors.blue,
+
+        floatingActionButtonTheme: const FloatingActionButtonThemeData(
+          backgroundColor: Color.fromARGB(250, 255, 179, 0),
+          foregroundColor: Colors.white,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(2.0)),
+          ),
+          elevation: 10,
+        ),
+
+        textTheme: const TextTheme(
+          bodyText2: TextStyle(
+              color: Colors.black,
+              fontStyle: FontStyle.italic,
+              fontSize: 20),
+          headline4: TextStyle(
+              color: Color.fromARGB(250, 26, 35, 126),
+              fontWeight: FontWeight.bold,
+              fontSize: 40),
+        ),
+
       ),
+
+
+
       home: Scaffold(
         appBar: AppBar(
           leading: Container(),
