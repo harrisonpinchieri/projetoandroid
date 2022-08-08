@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'difficulty.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -19,7 +21,6 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
           backgroundColor: Color.fromARGB(250, 26, 35, 126),
@@ -34,26 +35,21 @@ class _MyAppState extends State<MyApp> {
         floatingActionButtonTheme: const FloatingActionButtonThemeData(
           backgroundColor: Color.fromARGB(250, 255, 179, 0),
           foregroundColor: Colors.white,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(2.0)),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(2.0)),
           ),
           elevation: 10,
         ),
 
         textTheme: const TextTheme(
           bodyText2: TextStyle(
-              color: Colors.black,
-              fontStyle: FontStyle.italic,
-              fontSize: 20),
+              color: Colors.black, fontStyle: FontStyle.italic, fontSize: 20),
           headline4: TextStyle(
               color: Color.fromARGB(250, 26, 35, 126),
               fontWeight: FontWeight.bold,
               fontSize: 40),
         ),
-
       ),
-
-
-
       home: Scaffold(
         appBar: AppBar(
           leading: Container(),
@@ -87,10 +83,9 @@ class _MyAppState extends State<MyApp> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-             setState((){
-               opacidade = !opacidade;
-             });
-
+            setState(() {
+              opacidade = !opacidade;
+            });
           },
           child: Icon(Icons.remove_red_eye),
         ),
@@ -169,35 +164,9 @@ class _TaskState extends State<Task> {
                                 )),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Row(
-                                children: [
-                                  Icon(Icons.star,
-                                      size: 15,
-                                      color: (widget.dificuldade >= 1)
-                                          ? Colors.blue
-                                          : Colors.blue[100]),
-                                  Icon(Icons.star,
-                                      size: 15,
-                                      color: (widget.dificuldade >= 2)
-                                          ? Colors.blue
-                                          : Colors.blue[100]),
-                                  Icon(Icons.star,
-                                      size: 15,
-                                      color: (widget.dificuldade >= 3)
-                                          ? Colors.blue
-                                          : Colors.blue[100]),
-                                  Icon(Icons.star,
-                                      size: 15,
-                                      color: (widget.dificuldade >= 4)
-                                          ? Colors.blue
-                                          : Colors.blue[100]),
-                                  Icon(Icons.star,
-                                      size: 15,
-                                      color: (widget.dificuldade >= 5)
-                                          ? Colors.blue
-                                          : Colors.blue[100]),
-                                ],
-                              ),
+                              child: Difficulty(
+                                 dificultyLevel: widget.dificuldade,
+                                  ),
                             ),
                           ],
                         ),
@@ -259,3 +228,4 @@ class _TaskState extends State<Task> {
     );
   }
 }
+
