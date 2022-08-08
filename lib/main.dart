@@ -1,25 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:projetoandroid/Initial_screen.dart';
+import 'package:projetoandroid/screens/Initial_screen.dart';
 
 
 
 
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
-class MyApp extends StatefulWidget {
-  MyApp({Key? key}) : super(key: key);
+class MyApp extends StatelessWidget {
+ const MyApp({Key? key}) : super(key: key);
 
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -53,7 +45,7 @@ class _MyAppState extends State<MyApp> {
               fontSize: 40),
         ),
       ),
-      home: InitialScreen() ,
+      home: const InitialScreen() ,
     );
   }
 }
