@@ -47,7 +47,7 @@ class _FormScreenState extends State<FormScreen> {
                           },
                           controller: nameController,
                           textAlign: TextAlign.center,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             border: OutlineInputBorder(),
                             hintText: 'Nome',
                             fillColor: Colors.white70,
@@ -69,7 +69,7 @@ class _FormScreenState extends State<FormScreen> {
                           keyboardType: TextInputType.number,
                           controller: dificultyController,
                           textAlign: TextAlign.center,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             border: OutlineInputBorder(),
                             hintText: 'Dificuldade',
                             fillColor: Colors.white70,
@@ -92,7 +92,7 @@ class _FormScreenState extends State<FormScreen> {
                           keyboardType: TextInputType.url,
                           controller: imageController,
                           textAlign: TextAlign.center,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             border: OutlineInputBorder(),
                             hintText: 'Imagem',
                             fillColor: Colors.white70,
@@ -129,10 +129,12 @@ class _FormScreenState extends State<FormScreen> {
                               const SnackBar(
                                 content: Text('Printando nova Tarefa'),
                               ),
+
                             );
+                            Navigator.pop(context);
                           }
                         },
-                        child: Text('Adicionar!'),
+                        child: const Text('Adicionar!'),
                       )
                     ])),
           ),

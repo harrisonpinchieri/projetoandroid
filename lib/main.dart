@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
               fontSize: 40),
         ),
       ),
-      home: const FormScreen() ,
+      home: const InitialScreen() ,
     );
   }
 }
