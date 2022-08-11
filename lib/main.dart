@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projetoandroid/data/task_inherited.dart';
 import 'package:projetoandroid/screens/Initial_screen.dart';
 import 'package:projetoandroid/screens/form_screen.dart';
 
@@ -46,7 +47,7 @@ class MyApp extends StatelessWidget {
       //         fontSize: 40),
       //   ),
       // ),
-      home: const InitialScreen() ,
+      home: TaskInherited(child: const InitialScreen()) ,
     );
   }
 }
